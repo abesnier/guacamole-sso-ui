@@ -1,0 +1,47 @@
+<!--
+    sso-login-patch.html
+    ─────────────────────────────────────────────────────────────────────────────
+    Injected by guacamole-sso-ui into the Guacamole login page.
+
+    This fragment is controlled by an AngularJS controller defined in
+    sso-login.js. It queries /api/ext/sso-ui/providers at page load and renders
+    one button per detected SSO provider. Nothing is shown when the array is
+    empty (i.e. no SSO extensions are installed).
+
+    Guacamole's frontend uses AngularJS 1.x; all directives (ng-if, ng-repeat,
+    ng-click) are standard Angular 1 syntax.
+-->
+
+<!-- Insert this block immediately after the login fields container. -->
+<meta name="after-children" content=".login-form">
+
+<div ng-controller="SSOLoginController as sso">
+
+    <!-- Divider — only rendered when at least one SSO provider is available -->
+    <div class="sso-divider" ng-if="sso.providers.length > 0">
+        <span class="sso-divider__line"></span>
+        <span class="sso-divider__text">or continue with</span>
+        <span class="sso-divider__line"></span>
+    </div>
+
+    <!-- One button per detected SSO provider -->
+    <div class="buttons sso-buttons" ng-if="sso.providers.length > 0">
+        <button
+            class="sso-btn"
+            ng-repeat="provider in sso.providers track by provider.id"
+            ng-click="sso.login(provider)"
+            ng-attr-aria-label="{{ provider.label }}"
+            type="button">
+            {{ provider.label }}
+        </button>
+    </div>
+
+    <!-- Unobtrusive error message if the providers endpoint fails -->
+    <p class="sso-error" ng-if="sso.error" role="alert">
+        SSO providers could not be loaded.
+    </p>
+
+</div>
+
+<!-- <meta name="replace" content=".sso-providers">
+<div></div> -->

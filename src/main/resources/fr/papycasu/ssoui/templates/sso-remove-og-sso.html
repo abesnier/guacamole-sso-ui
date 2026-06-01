@@ -1,0 +1,19 @@
+<!--
+    sso-login-patch.html
+    ─────────────────────────────────────────────────────────────────────────────
+    Injected by guacamole-sso-ui into the Guacamole login page.
+
+    This fragment is controlled by an AngularJS controller defined in
+    sso-login.js. It queries /api/ext/sso-ui/providers at page load and renders
+    one button per detected SSO provider. Nothing is shown when the array is
+    empty (i.e. no SSO extensions are installed).
+
+    Guacamole's frontend uses AngularJS 1.x; all directives (ng-if, ng-repeat,
+    ng-click) are standard Angular 1 syntax.
+-->
+
+<!-- Insert this block immediately after the login fields container. -->
+<meta name="replace" content=".sso-providers">
+<div></div>
+
+

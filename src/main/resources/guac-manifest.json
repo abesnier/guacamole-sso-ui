@@ -1,0 +1,15 @@
+{
+  "guacamoleVersion": "${guacamole.version}",
+  "name": "Guacamole SSO UI Extension",
+  "namespace": "sso-ui",
+  "authProviders": [
+    "fr.papycasu.ssoui.SSOUIExtension"
+  ],
+  "html": [
+    "fr/papycasu/ssoui/templates/sso-login-patch.html",
+    "fr/papycasu/ssoui/templates/sso-remove-og-sso.html"
+  ],
+  "js": [
+    "fr/papycasu/ssoui/templates/sso-login.js"
+  ]
+}
