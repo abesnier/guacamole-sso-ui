@@ -6,6 +6,10 @@ detected at runtime.
 
 ![ScreenShot](images/screenshot.png)
 
+Guacamole's SSO extensions add the login links in the bottom left corner, I did not like that.
+
+This screenshot is an example, only the loaded SSO extensions will be shown in your login page, of course!
+
 ## Supported SSO extensions
 
 | Extension JAR                        | Button label   | Login endpoint          |
