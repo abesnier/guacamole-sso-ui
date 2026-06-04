@@ -20,7 +20,7 @@
     <!-- Divider — only rendered when at least one SSO provider is available -->
     <div class="sso-divider" ng-if="sso.providers.length > 0">
         <span class="sso-divider__line"></span>
-        <span class="sso-divider__text">or continue with</span>
+        <span class="sso-divider__text">{{ 'SSO_UI.DIVIDER_OR_CONTINUE_WITH' | translate }}</span>
         <span class="sso-divider__line"></span>
     </div>
 
@@ -38,7 +38,7 @@
 
     <!-- Unobtrusive error message if the providers endpoint fails -->
     <p class="sso-error" ng-if="sso.error" role="alert">
-        SSO providers could not be loaded.
+        {{ sso.errorKey | translate:sso.errorParams }}
     </p>
 
 </div>

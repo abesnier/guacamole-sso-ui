@@ -85,6 +85,8 @@ angular.module('guacSsoUi').controller('SSOLoginController', [
 
         vm.providers = [];   // populated after the API call
         vm.error     = false;
+        vm.errorKey = null;
+        vm.errorParams = {};
 
         var contextPath = ($window.location.pathname || '/').replace(/\/$/, '');
         if (contextPath === '')
@@ -97,10 +99,16 @@ angular.module('guacSsoUi').controller('SSOLoginController', [
         }
 
         function setLoadError(err) {
-            var suffix = '';
-            if (err && err.status)
-                suffix = ' (HTTP ' + err.status + ')';
-            vm.error = 'SSO providers could not be loaded' + suffix + '.';
+            vm.error = true;
+
+            if (err && err.status) {
+                vm.errorKey = 'SSO_UI.ERROR_PROVIDERS_LOAD_WITH_STATUS';
+                vm.errorParams = { status: err.status };
+            }
+            else {
+                vm.errorKey = 'SSO_UI.ERROR_PROVIDERS_LOAD';
+                vm.errorParams = {};
+            }
         }
 
         function fetchProvidersWithFallback() {

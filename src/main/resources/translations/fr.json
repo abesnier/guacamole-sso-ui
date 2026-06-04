@@ -1,0 +1,7 @@
+{
+  "SSO_UI": {
+    "DIVIDER_OR_CONTINUE_WITH": "ou continuer avec",
+    "ERROR_PROVIDERS_LOAD": "Impossible de charger les fournisseurs SSO.",
+    "ERROR_PROVIDERS_LOAD_WITH_STATUS": "Impossible de charger les fournisseurs SSO (HTTP {{status}})."
+  }
+}

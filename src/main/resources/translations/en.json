@@ -1,0 +1,7 @@
+{
+  "SSO_UI": {
+    "DIVIDER_OR_CONTINUE_WITH": "or continue with",
+    "ERROR_PROVIDERS_LOAD": "SSO providers could not be loaded.",
+    "ERROR_PROVIDERS_LOAD_WITH_STATUS": "SSO providers could not be loaded (HTTP {{status}})."
+  }
+}

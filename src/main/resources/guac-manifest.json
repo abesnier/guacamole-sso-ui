@@ -11,5 +11,9 @@
   ],
   "js": [
     "fr/papycasu/ssoui/templates/sso-login.js"
+  ],
+  "translations": [
+    "translations/en.json",
+    "translations/fr.json"
   ]
 }
